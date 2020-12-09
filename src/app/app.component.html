@@ -1,0 +1,36 @@
+<mat-form-field>
+  <mat-label>Buscar</mat-label>
+  <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="brand">
+      <th mat-header-cell *matHeaderCellDef> Brand </th>
+      <td mat-cell *matCellDef="let product"> {{product.brand}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let product"> {{product.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descuento">
+      <th mat-header-cell *matHeaderCellDef> Discount </th>
+      <td mat-cell *matCellDef="let product"> {{product.descuento}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+  </table>
+</div>
