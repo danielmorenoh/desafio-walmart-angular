@@ -10,6 +10,6 @@ export class AppService {
   constructor(private http: HttpClient) {}
   
   getProducts(): Observable<any>{
-    return this.http.get('http://localhost:9000/productos/obtener');
+    return this.http.get('http://35.208.255.140:8080/productos/obtener');
   }
 }
